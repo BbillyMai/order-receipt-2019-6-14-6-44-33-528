@@ -23,11 +23,15 @@ public class LineItem {
         return quantity;
     }
 
-    double totalAmount() {
+    double subTotal() {
         return price * quantity;
     }
 
-    double calculateSalesTax(){
-        return totalAmount() * .10;
+    double calculateSalesTax() {
+        return subTotal() * .10;
+    }
+
+    double totalAmount() {
+        return subTotal() + calculateSalesTax();
     }
 }
