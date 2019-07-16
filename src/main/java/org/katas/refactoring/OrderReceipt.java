@@ -24,14 +24,7 @@ public class OrderReceipt {
         double totSalesTx = 0d;
         double total = 0d;
         for (LineItem lineItem : order.getLineItems()) {
-            output.append(lineItem.getDescription());
-            output.append('\t');
-            output.append(lineItem.getPrice());
-            output.append('\t');
-            output.append(lineItem.getQuantity());
-            output.append('\t');
-            output.append(lineItem.subTotal());
-            output.append('\n');
+            output.append(String.format("%s\t%s\t%s\t%s\n",lineItem.getDescription(),lineItem.getPrice(),lineItem.getQuantity(),lineItem.subTotal()));
 
             totSalesTx += lineItem.calculateSalesTax();
 
